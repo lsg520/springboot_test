@@ -1,0 +1,9 @@
+server:
+  port: 80
+dubbo:
+  registry:
+    address: zookeeper://192.168.184.188:2181
+  application:
+    name: stu-manager
+  consumer:
+    check: false
