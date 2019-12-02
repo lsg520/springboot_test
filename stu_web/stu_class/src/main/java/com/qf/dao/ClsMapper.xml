@@ -6,4 +6,8 @@
     <delete id="deleteStuById" parameterType="int">
         update classes set cnum=cnum-1 where id=#{cid}
     </delete>
+
+    <update id="addNumById" parameterType="int">
+        update classes set cnum=cnum+1 where id=#{cid}
+    </update>
 </mapper>

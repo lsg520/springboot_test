@@ -9,4 +9,5 @@ import com.qf.entity.Classes;
  */
 public interface ClsMapper extends BaseMapper<Classes> {
     void deleteStuById(Integer cid);
+    void addNumById(Integer cid);
 }

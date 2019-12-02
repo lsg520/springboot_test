@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script type="text/css">
+        #st{
+            width: 450px;
+            height: auto;
+            margin: 0px auto;
+            margin-top: 100px;
+        }
+    </script>
 </head>
 <body>
-    <h2>学生信息管理界面</h2>
-    <div>
-        <table>
+    <div id="st">
+        <h2>学生信息管理界面</h2>
+        <table border="1">
             <tr>
                 <td>编号</td>
                 <td>姓名</td>
@@ -22,10 +30,11 @@
                 <td th:text="${s.cls.cname}"></td>
                 <td>
                     <a th:href="|/stu/delete?id=${s.id}|">删除</a>
-                    <a>修改</a>
+                    <a th:href="|/stu/toUpdate?id=${s.id}|">修改</a>
                 </td>
             </tr>
         </table>
+        <a href="/stu/toAdd">添加学生</a>
     </div>
 </body>
 </html>

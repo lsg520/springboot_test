@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/css">
+        #add{
+            width: 450px;
+            height: auto;
+            margin: 0px auto;
+            margin-top: 100px;
+        }
+    </script>
+</head>
+<body>
+    <div id="add">
+        <h1>添加信息界面</h1>
+        <form action="/stu/addStu" method="post">
+            <table>
+                <tr>
+                    <td>姓名：</td>
+                    <td><input type="text" name="sname" value=""/></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>年龄：</td>
+                    <td><input type="text" name="age" value=""/></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>所属班级：</td>
+                    <td>
+                        <select name="cid">
+                            <option value="">请选择班级</option>
+                            <option value="1">软件1601班</option>
+                            <option value="2">软件1602班</option>
+                            <option value="3">大数据1603班</option>
+                        </select>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="添加"></td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

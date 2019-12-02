@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/css">
+        #up{
+            width: 450px;
+            height: auto;
+            margin: 0px auto;
+            margin-top: 100px;
+        }
+    </script>
+</head>
+<body>
+    <div id="up">
+        <h1>学生信息修改界面</h1>
+        <form action="/stu/update" method="post">
+            <input type="hidden" name="id" th:value="${s.id}"/>
+            <!--<input type="hidden" name="cid" th:value="${s.cid}"/>-->
+            <table>
+                <tr>
+                    <td>姓名：</td>
+                    <td><input type="text" name="sname" th:value="${s.sname}"/></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>年龄：</td>
+                    <td><input type="text" name="age" th:value="${s.age}"/></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>所属班级：</td>
+                    <td>
+                        <select name="cid">
+                            <option th:selected="${s.cid==1}" value="1"> 软件1601班</option>
+                            <option th:selected="${s.cid==2}" value="2">软件1602班</option>
+                            <option th:selected="${s.cid==3}" value="3">大数据1603班</option>
+                        </select>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="修改"></td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>

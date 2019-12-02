@@ -27,8 +27,45 @@ public class StuController {
 
     @RequestMapping("/delete")
     public String delete(Integer id){
-        System.out.println(id);
         student.deleteById(id);
+        return "redirect:/stu/list";
+    }
+
+    @RequestMapping("/toUpdate")
+    public String toUpdate(Integer id,Model model){
+        Student stu = student.getStuById(id);
+        model.addAttribute("s",stu);
+        return "update";
+    }
+
+    /**
+     * 修改学生信息的方法
+     * @param stu
+     * @return
+     */
+    @RequestMapping("/update")
+    public String update(Student stu){
+        student.updateStu(stu);
+        return "redirect:/stu/list";
+    }
+
+    /**
+     * 跳转到添加学生界面
+     * @return
+     */
+    @RequestMapping("/toAdd")
+    public String toAdd(){
+        return "addStu";
+    }
+
+    /**
+     * 添加学生的方法
+     * @param stu
+     * @return
+     */
+    @RequestMapping("/addStu")
+    public String addStu(Student stu){
+        student.addStu(stu);
         return "redirect:/stu/list";
     }
 }

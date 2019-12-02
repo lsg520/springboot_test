@@ -38,4 +38,24 @@ public class StuServiceImpl implements IStudent {
         clsService.deleteStuById(cid);
         stuMapper.deleteById(id);
     }
+
+    @Override
+    public Student getStuById(Integer id) {
+        Student stu = stuMapper.selectById(id);
+        Integer cid = stu.getCid();
+        Classes c = clsService.queryById(cid);
+        stu.setCls(c);
+        return stu;
+    }
+
+    @Override
+    public void updateStu(Student stu) {
+        stuMapper.updateById(stu);
+    }
+
+    @Override
+    public void addStu(Student stu) {
+        clsService.addNumById(stu.getCid());
+        stuMapper.insert(stu);
+    }
 }

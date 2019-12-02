@@ -11,4 +11,7 @@ import java.util.List;
 public interface IStudent{
     List<Student> list();
     void deleteById(Integer id);
+    Student getStuById(Integer id);
+    void updateStu(Student stu);
+    void addStu(Student stu);
 }

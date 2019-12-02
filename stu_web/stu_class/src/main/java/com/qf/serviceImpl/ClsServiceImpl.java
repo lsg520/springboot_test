@@ -31,4 +31,9 @@ public class ClsServiceImpl implements IClsService {
     public void deleteStuById(Integer cid) {
         clsMapper.deleteStuById(cid);
     }
+
+    @Override
+    public void addNumById(Integer cid) {
+        clsMapper.addNumById(cid);
+    }
 }
